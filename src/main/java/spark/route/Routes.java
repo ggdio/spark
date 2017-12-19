@@ -199,7 +199,7 @@ public class Routes {
     private List<RouteEntry> findTargetsForRequestedRoute(HttpMethod httpMethod, String path) {
         List<RouteEntry> matchSet = new ArrayList<RouteEntry>();
         for (RouteEntry entry : routes) {
-            if (entry.matches(httpMethod, path)) {
+            if (entry != null && entry.matches(httpMethod, path)) {
                 matchSet.add(entry);
             }
         }
